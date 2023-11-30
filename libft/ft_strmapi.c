@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
+/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 12:13:32 by otodd             #+#    #+#             */
-/*   Updated: 2023/11/17 12:13:46 by otodd            ###   ########.fr       */
+/*   Updated: 2023/11/17 16:06:27 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			index;
 
 	if (!s)
-		return (ft_strdup(""));
+		return (NULL);
 	index = 0;
 	new_string = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new_string)

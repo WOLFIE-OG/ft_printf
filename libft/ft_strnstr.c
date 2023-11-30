@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
+/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 09:40:46 by otodd             #+#    #+#             */
-/*   Updated: 2023/11/17 12:14:01 by otodd            ###   ########.fr       */
+/*   Updated: 2023/11/17 14:31:08 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (!*little)
 		return ((char *)big);
+	if (len == 0)
+		return (NULL);
 	while (big[i] && i < len)
 	{
 		if (big[i] == little[0])

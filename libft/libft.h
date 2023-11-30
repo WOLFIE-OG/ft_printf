@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:36:11 by otodd             #+#    #+#             */
-/*   Updated: 2023/11/16 18:36:51 by otodd            ###   ########.fr       */
+/*   Updated: 2023/11/17 16:32:14 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+//Bonus
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 // Core Functions
 int		ft_isalpha(int c);
@@ -53,5 +60,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// Bonus functions
+t_list	*ft_lstnew(void *content);
 
 #endif
