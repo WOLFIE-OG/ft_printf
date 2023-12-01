@@ -6,23 +6,22 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/11/30 17:56:58 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/01 17:06:21 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-static int	parse_type(const char *in, void *args)
+static int	parse_type(const char *in, va_list arg)
 {
 	size_t	i;
 
-	(void)args;
 	i = 0;
 	if (*in == 'c')
-		printf("Print a char");
+		i += p_char(va_arg(arg, int));
 	else if (*in == 's')
-		printf("Print a string");
+		i += p_str(va_arg(arg, char *));
 	else if (*in == 'p')
 		printf("Print a pointer");
 	else if (*in == 'd' || *in == 'i')
@@ -48,11 +47,13 @@ int	ft_printf(const char *in, ...)
 		{
 			in++;
 			if (ft_strchr("cspdiuxX", *in))
-				i += parse_type(in, va_arg(args, void *));
+				i += parse_type(in, args);
 			else if (*in == '%')
-				i += print_char('%');
+				i += p_char('%');
 
 		}
+		else
+			i = i + p_char(*in);
 		in++;
 	}
 	va_end(args);

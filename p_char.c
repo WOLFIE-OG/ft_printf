@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   p_char.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/30 16:24:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/01 17:07:03 by otodd            ###   ########.fr       */
+/*   Created: 2023/12/01 13:57:40 by otodd             #+#    #+#             */
+/*   Updated: 2023/12/01 14:05:09 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+int	p_char(char c)
 {
-	ft_printf("This is %c test for char and this %s", 'a', "is a test for string.");
+	write(1, &c, 1);
+	return (1);
 }

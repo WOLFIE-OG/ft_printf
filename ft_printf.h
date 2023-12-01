@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:13:26 by otodd             #+#    #+#             */
-/*   Updated: 2023/11/30 16:51:25 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/01 17:05:22 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@
 # include "libft/libft.h"
 
 int	ft_printf(const char *in, ...);
+int	p_char(char c);
+int	p_str(char *s);
 
 #endif
