@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/01 17:06:21 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/03 00:46:03 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ static int	parse_type(const char *in, va_list arg)
 	else if (*in == 'p')
 		printf("Print a pointer");
 	else if (*in == 'd' || *in == 'i')
-		printf("Print an int or digit");
+		i += p_nbr(va_arg(arg, int));
 	else if (*in == 'u')
 		printf("Print an unsigned int");
 	else if (*in == 'x')
 		printf("Print a lowercase hex value");
 	else if (*in == 'X')
 		printf("Print a upper hex value");
+	else if (*in == '%')
+		i += p_char('%');
 	return (i);
 }
 
@@ -46,11 +48,8 @@ int	ft_printf(const char *in, ...)
 		if (*in == '%')
 		{
 			in++;
-			if (ft_strchr("cspdiuxX", *in))
+			if (p_strchr("cspdiuxX%", *in))
 				i += parse_type(in, args);
-			else if (*in == '%')
-				i += p_char('%');
-
 		}
 		else
 			i = i + p_char(*in);
