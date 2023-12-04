@@ -1,48 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   p_utils.c                                          :+:      :+:    :+:   */
+/*   p_ptr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 00:26:54 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/04 17:27:19 by otodd            ###   ########.fr       */
+/*   Created: 2023/12/04 16:49:59 by otodd             #+#    #+#             */
+/*   Updated: 2023/12/04 17:21:49 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	p_get_abs(int n)
+size_t	p_ptr(const void *n_ptr)
 {
-	if (n == INT_MIN)
-		return (INT_MAX);
-	if (n < 0)
-	{
-		if (n == INT_MIN)
-			return (INT_MAX);
-		return (-n);
-	}
-	return (n);
-}
+	size_t	i;
 
-int	p_is_negative_num(int n, int base)
-{
-	if (base == 10)
-		if (n < 0)
-			return (1);
-	return (0);
-}
-
-char	*p_strchr(char const *s, int c)
-{
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if (*s == (char)c)
-		return ((char *)s);
-	else
-		return (NULL);
+	i = 0;
+	i += p_str("0x");
+	i += p_arth((size_t)n_ptr, 16, 0);
+	return (i);
 }

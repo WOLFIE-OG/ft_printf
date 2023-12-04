@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/04 16:15:47 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 17:22:33 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ static size_t	parse_type(const char *in, va_list arg)
 	else if (*in == 's')
 		return (p_str(va_arg(arg, char *)));
 	else if (*in == 'p')
-		return (1);
+		return (p_ptr(va_arg(arg, const void *)));
 	else if (*in == 'd' || *in == 'i')
-		return (p_arth(va_arg(arg, int), 10));
+		return (p_arth(va_arg(arg, int), 10, 0));
 	else if (*in == 'u')
 		return (1);
 	else if (*in == 'x')
-		return (p_arth(va_arg(arg, int), 16));
+		return (p_arth(va_arg(arg, int), 16, 0));
 	else if (*in == 'X')
-		return (1);
+		return (p_arth(va_arg(arg, int), 16, 1));
 	else if (*in == '%')
 		return (p_char('%'));
 	return (0);
@@ -54,6 +54,5 @@ int	ft_printf(const char *in, ...)
 		in++;
 	}
 	va_end(args);
-	printf("\n%ld THIS IS THE REAL FUCKING RESULT\n", i - 1);
 	return (i - 1);
 }
