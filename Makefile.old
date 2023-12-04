@@ -1,16 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile.old                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2023/12/03 00:48:31 by wolfie           ###   ########.fr        #
+#    Updated: 2023/12/03 00:48:15 by wolfie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
+LIBFT = libft.a
+LIBFT_DIR = libft
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 SRCS = ft_printf.c p_char.c p_str.c p_nbr.c p_utils.c
@@ -20,12 +22,17 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	make -C $(LIBFT_DIR)
+	cp $(LIBFT_DIR)/$(LIBFT) .
+	mv $(LIBFT) $(NAME)
 	ar -r $(NAME) $(OBJS)
 
 clean:
 	rm -r $(OBJS)
+	cd $(LIBFT_DIR) && make clean
 
 fclean: clean
 	rm -f $(NAME)
+	cd $(LIBFT_DIR) && make fclean
 
 re: fclean all
