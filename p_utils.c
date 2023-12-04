@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 00:26:54 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/04 17:27:19 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 17:56:44 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	p_is_negative_num(int n, int base)
 			return (1);
 	return (0);
 }
+
 
 char	*p_strchr(char const *s, int c)
 {
