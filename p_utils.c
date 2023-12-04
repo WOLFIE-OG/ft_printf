@@ -3,14 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   p_utils.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 00:26:54 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/03 00:45:47 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/04 14:20:59 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	p_get_abs(int n)
+{
+	if (n == INT_MIN)
+		return (INT_MAX);
+	if (n < 0)
+	{
+		if (n == INT_MIN)
+			return (INT_MAX);
+		return (-n);
+	}
+	return (n);
+}
+
+int	p_is_negative_num(int n)
+{
+	if (n < 0)
+		return (1);
+	return (0);
+}
 
 char	*p_strchr(char const *s, int c)
 {

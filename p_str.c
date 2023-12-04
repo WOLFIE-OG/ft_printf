@@ -6,13 +6,13 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:00:53 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/01 17:05:51 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 14:33:20 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	p_str(char *s)
+size_t	p_str(char *s)
 {
 	size_t	i;
 
