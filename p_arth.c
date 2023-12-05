@@ -6,12 +6,11 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/05 16:28:34 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 16:32:27 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	get_n_10_placements(int n, int base)
 {
