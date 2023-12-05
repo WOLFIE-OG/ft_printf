@@ -6,7 +6,7 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/05 16:24:56 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 16:58:17 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	parse_type(const char *in, va_list arg)
 	else if (*in == 's')
 		return (p_str(va_arg(arg, char *)));
 	else if (*in == 'p')
-		return (p_ptr(va_arg(arg, uintptr_t *)));
+		return (p_ptr(va_arg(arg, uintptr_t)));
 	else if (*in == 'd' || *in == 'i')
 		return (p_arth(va_arg(arg, int), 10, 0, 0));
 	else if (*in == 'u')
