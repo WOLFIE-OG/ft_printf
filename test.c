@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:24:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/04 17:28:33 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 23:04:24 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ int	main(void)
 
 	printf("\n================================\n");
 	printf("\nPrinted %d chars", ft_printf("This is a test for upper hex and this is %X\n", ptr));
+	printf("\n================================\n");
+
+	printf("\n================================\n");
+	printf("\nPrinted %d chars", ft_printf("This is a test for unsigned int and this is %u\n", -100));
 	printf("\n================================\n");
 }

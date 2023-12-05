@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/04 17:22:33 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 23:45:47 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,17 @@ static size_t	parse_type(const char *in, va_list arg)
 	else if (*in == 'p')
 		return (p_ptr(va_arg(arg, const void *)));
 	else if (*in == 'd' || *in == 'i')
-		return (p_arth(va_arg(arg, int), 10, 0));
+		return (p_arth(va_arg(arg, int), 10, 0, 0));
 	else if (*in == 'u')
-		return (1);
+		return (p_arth_u(va_arg(arg, unsigned int)));
 	else if (*in == 'x')
-		return (p_arth(va_arg(arg, int), 16, 0));
+		return (p_arth(va_arg(arg, int), 16, 0, 0));
 	else if (*in == 'X')
-		return (p_arth(va_arg(arg, int), 16, 1));
+		return (p_arth(va_arg(arg, int), 16, 1, 0));
 	else if (*in == '%')
 		return (p_char('%'));
-	return (0);
+	else
+		return (0);
 }
 
 int	ft_printf(const char *in, ...)
@@ -54,5 +55,5 @@ int	ft_printf(const char *in, ...)
 		in++;
 	}
 	va_end(args);
-	return (i - 1);
+	return (i);
 }

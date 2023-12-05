@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_utils.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 00:26:54 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/04 17:56:44 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 23:46:45 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	p_is_negative_num(int n, int base)
 			return (1);
 	return (0);
 }
-
 
 char	*p_strchr(char const *s, int c)
 {

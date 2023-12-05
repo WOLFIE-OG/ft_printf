@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_ptr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:49:59 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/04 17:21:49 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 22:59:45 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 size_t	p_ptr(const void *n_ptr)
 {
-	size_t	i;
-
-	i = 0;
-	i += p_str("0x");
-	i += p_arth((size_t)n_ptr, 16, 0);
-	return (i);
+	return (p_arth((size_t)n_ptr, 16, 0, 1));
 }

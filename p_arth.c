@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_arth.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/04 17:27:43 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/04 23:44:28 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,23 @@ static char	convert_base(int i, int is_upper)
 		return (i - 10 + c);
 }
 
-size_t	p_arth(int n, int base, int is_upper)
+static int	p_out(char *string, int is_pointer)
+{
+	size_t	i;
+
+	i = 0;
+	if (is_pointer)
+		i += p_str("0x");
+	i += p_str(string);
+	free(string);
+	return (i);
+}
+
+size_t	p_arth(int n, int base, int is_upper, int is_pointer)
 {
 	const int	is_negative = p_is_negative_num(n, base);
 	int			len;
 	char		*string;
-	size_t		i;
 
 	len = get_n_10_placements(p_get_abs(n), base) + is_negative;
 	string = (char *)malloc(sizeof(char) * (len + 1));
@@ -55,12 +66,8 @@ size_t	p_arth(int n, int base, int is_upper)
 		string[0] = '-';
 	while (len >= is_negative)
 	{
-
 		string[len--] = (convert_base(p_get_abs(n) % base, is_upper));
 		n /= base;
 	}
-	i = p_str(string);
-	free(string);
-	return (i);
+	return (p_out(string, is_pointer));
 }
-
