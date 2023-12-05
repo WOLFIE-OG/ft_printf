@@ -6,13 +6,13 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/05 16:32:27 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 18:10:53 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	get_n_10_placements(int n, int base)
+static int	get_n_10_placements(unsigned long long int n, int base)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ static int	get_n_10_placements(int n, int base)
 	return (len);
 }
 
-static char	convert_base(int i, int is_upper)
+static char	convert_base(unsigned long long int i, int is_upper)
 {
 	char	c;
 
@@ -59,7 +59,7 @@ size_t	p_arth(int n, int base, int is_upper, int is_pointer)
 	char		*string;
 
 	len = get_n_10_placements(p_get_abs(n), base) + is_negative;
-	string = (char *)malloc(sizeof(char) * (len + 1));
+	string = (char *)calloc((len + 1), sizeof(char));
 	string[len--] = '\0';
 	if (is_negative)
 		string[0] = '-';
