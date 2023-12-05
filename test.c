@@ -6,7 +6,7 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:24:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/04 23:04:24 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 15:27:46 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,51 @@
 #include <stdio.h>
 #include <limits.h>
 
+char	*EDGES = "\n================================================================\n";
+
 int	main(void)
 {
-	int	val = 10;
-	int	*ptr = &val;
+	unsigned int	val = 10;
+	unsigned int	*ptr = &val;
+	unsigned int	nbr_val = 1234567;
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is %c test for char.\n", 'a'));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own: 			%d chars\n\n", ft_printf("This is %c test for char.", 'a'));
+	printf("\n	Original:		%d chars", printf("This is %c test for char.", 'a'));
+	printf("%s", EDGES);
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is a test for str %s.\n", "and this is the test string"));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own: 			%d chars\n\n", ft_printf("This is %c test for char and this is a test for %yyy", 'a'));
+	printf("\n	Original:		%d chars", printf("This is %c test for char and this is a test for %yyy", 'a'));
+	printf("%s", EDGES);
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is a test for digit / int and this is %d\n", ptr));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own:			%d chars\n\n", ft_printf("This is a test for str %s.", "and this is the test string"));
+	printf("\n	Original:		%d chars", printf("This is a test for str %s.", "and this is the test string"));
+	printf("%s", EDGES);
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is a test for lower hex and this is %x\n", ptr));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own: 			%d chars\n\n", ft_printf("This is a test for digit / int and this is %d", ptr));
+	printf("\n	Original:		%d chars", printf("This is a test for digit / int and this is %d", ptr));
+	printf("%s", EDGES);
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is a test for ptr and this is %p\n", ptr));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own:			%d chars\n\n", ft_printf("This is a test for lower hex and this is %x", ptr));
+	printf("\n	Original:		%d chars", printf("This is a test for lower hex and this is %x", ptr));
+	printf("%s", EDGES);
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is a test for upper hex and this is %X\n", ptr));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own:			%d chars\n\n", ft_printf("This is a test for upper hex and this is %X", ptr));
+	printf("\n	Original:		%d chars", printf("This is a test for upper hex and this is %X", ptr));
+	printf("%s", EDGES);
 
-	printf("\n================================\n");
-	printf("\nPrinted %d chars", ft_printf("This is a test for unsigned int and this is %u\n", -100));
-	printf("\n================================\n");
+	printf("%s", EDGES);
+	printf("\n	Own: 			%d chars\n\n", ft_printf("This is a test for ptr and this is %p", ptr));
+	printf("\n	Original:		%d chars", printf("This is a test for ptr and this is %p", ptr));
+	printf("%s", EDGES);
+
+	printf("%s", EDGES);
+	printf("\n	Own:			%d chars\n\n", ft_printf("This is a test for unsigned int and this is %u", ptr));
+	printf("\n	Original:		%d chars", printf("This is a test for unsigned int and this is %u", ptr));
+	printf("%s", EDGES);
 }

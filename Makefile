@@ -6,7 +6,7 @@
 #    By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2023/12/04 23:52:40 by wolfie           ###   ########.fr        #
+#    Updated: 2023/12/05 15:04:38 by wolfie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,16 @@ $(NAME): $(OBJS)
 	ar -r $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) a.out
 
 fclean: clean
 	rm -f $(NAME)
+
+test: re
+	$(CC) test.c $(NAME)
+	./a.out
+
+norm:
+	norminette $(SRCS) ft_printf.h
 
 re: fclean all

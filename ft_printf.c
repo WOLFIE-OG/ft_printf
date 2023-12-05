@@ -6,7 +6,7 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/04 23:45:47 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 15:26:41 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ int	ft_printf(const char *in, ...)
 			in++;
 			if (p_strchr("cspdiuxX%", *in))
 				i += parse_type(in, args);
+			else
+			{
+				i += p_char('%');
+				i += p_char(*in);
+			}
 		}
 		else
 			i += p_char(*in);
