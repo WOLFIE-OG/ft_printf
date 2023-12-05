@@ -6,13 +6,13 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:49:59 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/05 15:01:55 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 16:25:56 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	p_ptr(const void *n_ptr)
+size_t	p_ptr(uintptr_t *n_ptr)
 {
-	return (p_arth((size_t)n_ptr, 16, 0, 1));
+	return (p_arth((uintptr_t)n_ptr, 16, 0, 1));
 }
