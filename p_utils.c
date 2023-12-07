@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   p_utils.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
+/*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 00:26:54 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/05 11:59:06 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/07 16:45:28 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	p_get_abs(int n)
+int	p_get_abs(int n, int base)
 {
+	if (base > 10)
+		return (n);
 	if (n == INT_MIN)
 		return (INT_MAX);
 	if (n < 0)
