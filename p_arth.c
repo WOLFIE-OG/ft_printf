@@ -6,13 +6,13 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/07 16:21:56 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/07 18:15:24 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	get_n_10_placements(int n, int base)
+static int	get_n_10_placements(unsigned long long int n, int base)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ static int	get_n_10_placements(int n, int base)
 	return (len);
 }
 
-static char	convert_base(int i, int is_upper)
+static char	convert_base(unsigned long long int i, int is_upper)
 {
 	char	c;
 

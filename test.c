@@ -6,7 +6,7 @@
 /*   By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:24:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/05 15:27:46 by wolfie           ###   ########.fr       */
+/*   Updated: 2023/12/05 17:09:04 by wolfie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*EDGES = "\n===============================================================
 
 int	main(void)
 {
-	unsigned int	val = 10;
-	unsigned int	*ptr = &val;
+	uintptr_t		val = 10;
+	uintptr_t		*ptr = &val;
 	unsigned int	nbr_val = 1234567;
 
 	printf("%s", EDGES);
