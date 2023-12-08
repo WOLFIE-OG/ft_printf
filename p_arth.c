@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/07 18:15:24 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/08 17:52:30 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,16 @@ static int	p_out(char *string)
 	return (i);
 }
 
-size_t	p_arth(int n, int base, int is_upper)
+size_t	p_arth(unsigned int n, int base, int is_upper)
 {
 	const int	is_negative = p_is_negative_num(n, base);
 	int			len;
 	char		*string;
 
+	if ((int)n == INT_MIN && base == 10)
+		return (p_str("-2147483648"));
+	if ((int)n == INT_MAX && base == 10)
+		return (p_str("2147483647"));
 	n = p_get_abs(n, base);
 	len = get_n_10_placements(n, base) + is_negative;
 	string = (char *)malloc(sizeof(char) * (len + 1));

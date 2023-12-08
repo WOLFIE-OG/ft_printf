@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/07 18:15:37 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/08 17:32:38 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ static int	p_out(char *string)
 	i = 0;
 	i += p_str("0x");
 	i += p_str(string);
-	free(string);
 	return (i);
 }
 
@@ -54,6 +53,8 @@ size_t	p_ptr(uintptr_t n)
 	int			len;
 	char		*string;
 
+	if (!n)
+		return (p_str("(nil)"));
 	len = get_n_10_placements(n);
 	string = (char *)malloc(sizeof(char) * (len + 1));
 	string[len--] = '\0';

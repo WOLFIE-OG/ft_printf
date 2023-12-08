@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:13:26 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/07 18:15:15 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/08 17:37:52 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int		ft_printf(const char *in, ...);
 size_t	p_char(char c);
 size_t	p_str(char *s);
-size_t	p_arth(int n, int base, int is_upper);
+size_t	p_arth(unsigned int n, int base, int is_upper);
 size_t	p_arth_u(unsigned int n);
 size_t	p_ptr(uintptr_t n_ptr);
 char	*p_strchr(char const *s, int c);

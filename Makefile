@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+         #
+#    By: otodd <otodd@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2023/12/05 15:04:38 by wolfie           ###   ########.fr        #
+#    Updated: 2023/12/08 17:47:49 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ fclean: clean
 	rm -f $(NAME)
 
 test: re
-	$(CC) test.c $(NAME)
+	$(CC) test.c -g $(NAME)
 	./a.out
 
 norm:
