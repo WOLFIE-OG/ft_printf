@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:24:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/08 17:52:05 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/08 18:14:50 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,47 +19,54 @@ char	*EDGES = "\n===============================================================
 
 int	main(void)
 {
-	int				val = INT_MIN;
-	int				*ptr = &val;
-	unsigned int	nbr_val = 1234567;
+	char			test_char = 'a';
+	char			*test_str = "|I AM A TEST STRINGS|";
+	int				test_int_val = INT_MIN;
+	int				*test_int_ptr = &test_int_val;
+	unsigned int	test_unsigned_int = 123456;
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is %c test for char."reset, 'a'));
-	printf("\n	Original:		%d chars", printf(GRN"This is %c test for char."reset, 'a'));
-	printf(BLU"%s"reset, EDGES);
-
-	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is %c test for char and this is a test for %yyy"reset, 'a'));
-	printf("\n	Original:		%d chars", printf(GRN"This is %c test for char and this is a test for %yyy"reset, 'a'));
+	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is %c test for char."reset, test_char));
+	printf("\n	Original:		%d chars", printf(GRN"This is %c test for char."reset, test_char));
 	printf(BLU"%s"reset, EDGES);
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for str %s."reset, NULL));
-	printf("\n	Original:		%d chars", printf(GRN"This is a test for str %s."reset, NULL));
+	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is %c test for char and this is a test for %yyy"reset, test_char));
+	printf("\n	Original:		%d chars", printf(GRN"This is %c test for char and this is a test for %yyy"reset, test_char));
 	printf(BLU"%s"reset, EDGES);
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is a test for digit / int and this is %d"reset, NULL));
-	printf("\n	Original:		%d chars", printf(GRN"This is a test for digit / int and this is %d"reset, NULL));
+	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for str %s."reset, test_str));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for str %s."reset, test_str));
 	printf(BLU"%s"reset, EDGES);
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for lower hex and this is %x"reset, INT_MAX));
-	printf("\n	Original:		%d chars", printf(GRN"This is a test for lower hex and this is %x"reset, INT_MAX));
+	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is a test for digit and this is %d"reset, test_int_val));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for digit and this is %d"reset, test_int_val));
 	printf(BLU"%s"reset, EDGES);
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for upper hex and this is %X"reset, INT_MAX));
-	printf("\n	Original:		%d chars", printf(GRN"This is a test for upper hex and this is %X"reset, INT_MAX));
+	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is a test for int and this is %i"reset, test_int_val));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for int and this is %i"reset, test_int_val));
 	printf(BLU"%s"reset, EDGES);
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is a test for ptr and this is %p"reset, NULL));
-	printf("\n	Original:		%d chars", printf(GRN"This is a test for ptr and this is %p"reset, NULL));
+	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for lower hex and this is %x"reset, test_unsigned_int));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for lower hex and this is %x"reset, test_unsigned_int));
 	printf(BLU"%s"reset, EDGES);
 
 	printf(BLU"%s"reset, EDGES);
-	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for unsigned int and this is %u"reset, NULL));
-	printf("\n	Original:		%d chars", printf(GRN"This is a test for unsigned int and this is %u"reset, NULL));
+	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for upper hex and this is %X"reset, test_unsigned_int));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for upper hex and this is %X"reset, test_unsigned_int));
+	printf(BLU"%s"reset, EDGES);
+
+	printf(BLU"%s"reset, EDGES);
+	printf("\n	Own: 			%d chars\n\n", ft_printf(GRN"This is a test for ptr and this is %p"reset, test_int_ptr));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for ptr and this is %p"reset, test_int_ptr));
+	printf(BLU"%s"reset, EDGES);
+
+	printf(BLU"%s"reset, EDGES);
+	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for unsigned int and this is %u"reset, test_unsigned_int));
+	printf("\n	Original:		%d chars", printf(GRN"This is a test for unsigned int and this is %u"reset, test_unsigned_int));
 	printf(BLU"%s"reset, EDGES);
 }

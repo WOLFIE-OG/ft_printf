@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2023/12/08 17:32:38 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/08 18:19:32 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ static int	p_out(char *string)
 	i = 0;
 	i += p_str("0x");
 	i += p_str(string);
+	free(string);
 	return (i);
 }
 
