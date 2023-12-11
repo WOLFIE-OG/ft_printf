@@ -6,12 +6,11 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/08 17:37:35 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/11 14:06:53 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static size_t	parse_type(const char *in, va_list arg)
 {

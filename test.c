@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:24:27 by otodd             #+#    #+#             */
-/*   Updated: 2023/12/08 18:14:50 by otodd            ###   ########.fr       */
+/*   Updated: 2023/12/11 16:28:02 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,24 @@ int	main(void)
 	printf(BLU"%s"reset, EDGES);
 	printf("\n	Own:			%d chars\n\n", ft_printf(GRN"This is a test for unsigned int and this is %u"reset, test_unsigned_int));
 	printf("\n	Original:		%d chars", printf(GRN"This is a test for unsigned int and this is %u"reset, test_unsigned_int));
+	printf(BLU"%s"reset, EDGES);
+
+	printf(BLU"%s"reset, EDGES);
+
+	int	i_ft = INT_MIN;
+	int	char_printed_ft = 0;
+	int	char_printed_og = 0;
+	while (i_ft != INT_MAX)
+	{
+		char_printed_ft += ft_printf(GRN"%d | %x (%X)\n"reset, i_ft, i_ft, i_ft);
+		char_printed_og += printf(GRN"%d | %x (%X)\n"reset, i_ft, i_ft, i_ft++);
+	}
+	int	i_u = INT_MIN;
+	while (i_u != INT_MAX)
+		ft_printf(GRN"%u\n"reset, i_u++);
+
+	printf("FT: %d\nOG: %d\n", char_printed_ft, char_printed_og);
+	
+
 	printf(BLU"%s"reset, EDGES);
 }
