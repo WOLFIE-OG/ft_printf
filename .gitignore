@@ -3,3 +3,6 @@
 **.out
 printfTester
 luke_test.c
+.gitignore
+ANSI-color-codes.h
+test.c
