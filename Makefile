@@ -6,13 +6,13 @@
 #    By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/01/16 16:06:41 by wolfie           ###   ########.fr        #
+#    Updated: 2024/01/16 17:11:15 by wolfie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_printf.c \
 	p_arth_u.c \
 	p_arth.c \
@@ -33,12 +33,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-
-test: re
-	$(CC) test.c -g $(NAME)
-	./a.out
-
-norm:
-	norminette $(SRCS) ft_printf.h
 
 re: fclean all
