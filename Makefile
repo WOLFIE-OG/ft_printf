@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: otodd <otodd@student.42.fr>                +#+  +:+       +#+         #
+#    By: wolfie <wolfie@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2023/12/08 18:10:24 by otodd            ###   ########.fr        #
+#    Updated: 2024/01/16 16:06:41 by wolfie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -r $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS) a.out
