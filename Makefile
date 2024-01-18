@@ -31,7 +31,7 @@ bin/%.o: src/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 	rm -rf bin
 
 re: all
