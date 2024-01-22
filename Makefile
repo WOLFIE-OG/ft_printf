@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/01/18 18:00:48 by otodd            ###   ########.fr        #
+#    Updated: 2024/01/19 19:10:02 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,18 +20,18 @@ SRCS = ft_printf.c \
 	ft_printf_str.c \
 	ft_printf_utils.c
 
-OBJS = $(SRCS:%.c=bin/%.o)
+OBJS = $(SRCS:%.c=obj/%.o)
 
 all: dir $(OBJS)
 
 dir:
-	mkdir -p bin
+	mkdir -p obj
 
-bin/%.o: src/%.c
+obj/%.o: src/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
 	rm -rf $(OBJS)
-	rm -rf bin
+	rm -rf obj
 
 re: all
