@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2024/01/18 16:50:16 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/05 20:47:21 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ static size_t	parse_type(const char *in, va_list arg)
 		return (ft_printf_char(va_arg(arg, int)));
 	else if (*in == 's')
 		return (ft_printf_str(va_arg(arg, char *)));
+	else if (*in == 'a')
+		return (ft_printf_char_array(va_arg(arg, char **)));
+	else if (*in == 'n')
+		return (ft_printf_nbr_array(va_arg(arg, int *)));
 	else if (*in == 'p')
 		return (ft_printf_ptr(va_arg(arg, uintptr_t)));
 	else if (*in == 'd' || *in == 'i')
@@ -46,7 +50,7 @@ int	ft_printf(const char *in, ...)
 		if (*in == '%')
 		{
 			in++;
-			if (ft_printf_strchr("cspdiuxX%", *in))
+			if (ft_printf_strchr("csanpdiuxX%", *in))
 				i += parse_type(in, args);
 			else
 			{

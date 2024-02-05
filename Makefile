@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/05 17:09:06 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/05 20:44:05 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRCS := ft_printf.c \
 	ft_printf_char.c \
 	ft_printf_ptr.c \
 	ft_printf_str.c \
-	ft_printf_utils.c
+	ft_printf_utils.c \
+	ft_printf_char_array.c \
+	ft_printf_nbr_array.c
 
 YELLOW := \033[1;33m
 RED := \033[1;31m
