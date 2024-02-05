@@ -6,12 +6,12 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/05 20:44:05 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/05 22:07:52 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror 
 SRCS := ft_printf.c \
 	ft_printf_arth_u.c \
 	ft_printf_arth.c \
