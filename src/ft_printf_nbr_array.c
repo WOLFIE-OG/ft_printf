@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:00:53 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/05 22:11:07 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/05 22:39:59 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_printf_nbr_array(int *a)
 	int 	*k;
 
 	if (!a)
-		a[0] = INT_MAX;
+		return (0);
 	i = 0;
 	j = 0;
 	c = 0;
