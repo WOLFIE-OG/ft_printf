@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/02 18:36:24 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/05 03:01:15 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,16 @@ all: dir $(OBJS)
 
 dir:
 	@if [ ! -d "obj" ]; then \
-		echo "$(GREEN)[FTPRINTF]  Creating obj directory...$(NC)"; \
+		echo "[$(GREEN)FTPRINTF$(NC)]  Creating obj directory..."; \
 		mkdir -p obj; \
 	fi
 
 obj/%.o: src/%.c
-	@echo "$(GREEN)[FTPRINTF]  Compiling $< --> $@$(NC)"
+	@echo "[$(GREEN)FTPRINTF$(NC)]  Compiling $< --> $@"
 	@$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
-	@echo "$(YELLOW)[FTPRINTF]  Cleaning object files...$(NC)"
+	@echo "[$(YELLOW)FTPRINTF$(NC)]  Cleaning object files..."
 	@rm -rf $(OBJS)
 	@rm -rf obj
 
