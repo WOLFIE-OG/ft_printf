@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:00:53 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/05 23:12:01 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/06 12:15:49 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_printf_nbr_array(int *a)
 	size_t	i;
 	size_t	j;
 	size_t	c;
-	int 	*k;
+	int		*k;
 
 	if (!a)
 		return (0);
@@ -31,7 +31,7 @@ size_t	ft_printf_nbr_array(int *a)
 	while (*a != INT_MAX)
 	{
 		i += ft_printf_arth(*a++, 10, 0);
-		if (c + 1!= j)
+		if ((c + 1) != j)
 			i += ft_printf_str(", ");
 		c++;
 	}
