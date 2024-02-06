@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/06 17:23:15 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/06 17:32:37 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ static size_t	parse_type(const char *in, va_list arg)
 
 static void	ft_printf_extra_flags(const char **in)
 {
-	if (ft_printf_strchr("Ll", **in))
-		if (ft_printf_strchr("abA", *(*in + 1)))
+	if (ft_printf_strchr("L", **in))
+		if (ft_printf_strchr("abAo", *(*in + 1)))
 			(*in)++;
 }
 

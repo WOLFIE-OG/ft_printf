@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:00:53 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/06 17:24:33 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/06 17:32:04 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_printf_linked_list(t_list *n, char *type)
 			i += ft_printf_arth(*(int *)n->content, 16, 0);
 		else if (*type == 'L' && *(type + 1) == 'A' )
 			i += ft_printf_arth(*(int *)n->content, 16, 1);
+		else if (*type == 'L' && *(type + 1) == 'o' )
+			i += ft_printf_arth(*(int *)n->content, 8, 1);
 		else if (*type == 'L' && *(type + 1) == 'b' )
 			i += ft_printf_arth(*(int *)n->content, 2, 0);
 		else if (*type == 'L')
