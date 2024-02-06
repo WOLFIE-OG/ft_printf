@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/05 22:07:52 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/06 01:55:26 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS := ft_printf.c \
 	ft_printf_str.c \
 	ft_printf_utils.c \
 	ft_printf_char_array.c \
-	ft_printf_nbr_array.c
+	ft_printf_nbr_array.c \
+	ft_printf_linked_list.c
 
 YELLOW := \033[1;33m
 RED := \033[1;31m
@@ -39,7 +40,7 @@ dir:
 
 obj/%.o: src/%.c
 	@echo "[$(GREEN)FTPRINTF$(NC)]  Compiling $< --> $@"
-	@$(CC) -o $@ -c $< $(CFLAGS)
+	@$(CC) -o $@ -c $< $(CFLAGS) -I../../../../include
 
 clean:
 	@echo "[$(YELLOW)FTPRINTF$(NC)]  Cleaning object files..."
