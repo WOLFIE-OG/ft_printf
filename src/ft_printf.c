@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/06 16:36:29 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/06 17:23:15 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,24 @@ static size_t	parse_type(const char *in, va_list arg)
 		return (0);
 }
 
+static void	ft_printf_extra_flags(const char **in)
+{
+	if (ft_printf_strchr("Ll", **in))
+		if (ft_printf_strchr("abA", *(*in + 1)))
+			(*in)++;
+}
+
+static void	ft_printf_process(const char **in, va_list args, size_t *count)
+{
+	if (ft_printf_strchr("csanlLpdiuxX%", **in))
+		*count += parse_type(*in, args);
+	else
+	{
+		*count += ft_printf_char('%');
+		*count += ft_printf_char(**in);
+	}
+}
+
 int	ft_printf(const char *in, ...)
 {
 	va_list	args;
@@ -52,13 +70,8 @@ int	ft_printf(const char *in, ...)
 		if (*in == '%')
 		{
 			in++;
-			if (ft_printf_strchr("csanlLpdiuxX%", *in))
-				i += parse_type(in, args);
-			else
-			{
-				i += ft_printf_char('%');
-				i += ft_printf_char(*in);
-			}
+			ft_printf_process(&in, args, &i);
+			ft_printf_extra_flags(&in);
 		}
 		else
 			i += ft_printf_char(*in);
