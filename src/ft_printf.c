@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/06 12:34:36 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/06 16:36:29 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static size_t	parse_type(const char *in, va_list arg)
 	else if (*in == 'n')
 		return (ft_printf_nbr_array(va_arg(arg, int *)));
 	else if (*in == 'l' || *in == 'L')
-		return (ft_printf_linked_list(va_arg(arg, t_list *), *in));
+		return (ft_printf_linked_list(va_arg(arg, t_list *), (char *)in));
 	else if (*in == 'p')
 		return (ft_printf_ptr(va_arg(arg, uintptr_t)));
 	else if (*in == 'd' || *in == 'i')

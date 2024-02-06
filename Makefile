@@ -6,13 +6,13 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/06 14:14:04 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/06 16:05:03 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := cc
 NAME := libftprintf.a
-CFLAGS := -Wall -Wextra -Werror 
+CFLAGS := -Wall -Wextra -Werror -g
 SRCS := ft_printf.c \
 	ft_printf_arth_u.c \
 	ft_printf_arth.c \
