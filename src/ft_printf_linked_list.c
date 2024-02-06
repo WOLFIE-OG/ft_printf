@@ -6,13 +6,13 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:00:53 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/06 01:57:46 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/06 12:54:06 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-size_t	ft_printf_linked_list(t_list *n)
+size_t	ft_printf_linked_list(t_list *n, char type)
 {
 	size_t	i;
 
@@ -20,7 +20,10 @@ size_t	ft_printf_linked_list(t_list *n)
 	i += ft_printf_char('[');
 	while (n)
 	{
-		i += ft_printf_str((char *)n->content);
+		if (type == 'l')
+			i += ft_printf_str((char *)n->content);
+		else if (type == 'L')
+			i += ft_printf_arth(*(int *)n->content, 10, 0);
 		if (n->next)
 			i += ft_printf_str(", ");
 		n = n->next;
