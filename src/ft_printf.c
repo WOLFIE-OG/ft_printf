@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/06 17:32:37 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/07 18:46:06 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static size_t	parse_type(const char *in, va_list arg)
 	else if (*in == 'a')
 		return (ft_printf_char_array(va_arg(arg, char **)));
 	else if (*in == 'n')
-		return (ft_printf_nbr_array(va_arg(arg, int *)));
+		return (ft_printf_nbr_array(va_arg(arg, int *), (char *)in));
 	else if (*in == 'l' || *in == 'L')
 		return (ft_printf_linked_list(va_arg(arg, t_list *), (char *)in));
 	else if (*in == 'p')
@@ -42,7 +42,7 @@ static size_t	parse_type(const char *in, va_list arg)
 
 static void	ft_printf_extra_flags(const char **in)
 {
-	if (ft_printf_strchr("L", **in))
+	if (ft_printf_strchr("Lln", **in))
 		if (ft_printf_strchr("abAo", *(*in + 1)))
 			(*in)++;
 }
