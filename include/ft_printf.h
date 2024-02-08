@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:11:03 by wolfie            #+#    #+#             */
-/*   Updated: 2024/02/07 18:46:12 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/07 19:54:58 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <stdint.h>
+# define ARRAY_FORMATTER_S '['
+# define ARRAY_FORMATTER_M ", "
+# define ARRAY_FORMATTER_E ']'
 # if __has_include("../../../../include/list.h")
 #  include "../../../../include/list.h"
 # else

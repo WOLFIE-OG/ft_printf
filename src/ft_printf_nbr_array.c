@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:00:53 by otodd             #+#    #+#             */
-/*   Updated: 2024/02/07 19:01:53 by otodd            ###   ########.fr       */
+/*   Updated: 2024/02/07 19:41:05 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static size_t	ft_printf_array_element(int **a, char *type)
 {
 	if (*type == 'n')
 	{
-		if (*(type + 1) == 'a')
+		if (*(type + 1) == 'x')
 			return (ft_printf_arth(*((*a))++, 16, 0));
-		else if (*(type + 1) == 'A' )
+		else if (*(type + 1) == 'X' )
 			return (ft_printf_arth(*((*a))++, 16, 1));
 		else if (*(type + 1) == 'o' )
 			return (ft_printf_arth(*((*a))++, 8, 0));
@@ -50,13 +50,13 @@ size_t	ft_printf_nbr_array(int *a, char *type)
 		return (0);
 	i = 0;
 	c = 0;
-	i += ft_printf_char('[');
+	i += ft_printf_char(ARRAY_FORMATTER_S);
 	while (*a != INT_MAX)
 	{
 		i += ft_printf_array_element(&a, type);
 		if ((c++ + 1) != j)
-			i += ft_printf_str(", ");
+			i += ft_printf_str(ARRAY_FORMATTER_M);
 	}
-	i += ft_printf_char(']');
+	i += ft_printf_char(ARRAY_FORMATTER_E);
 	return (i);
 }
