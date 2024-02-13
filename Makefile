@@ -6,30 +6,33 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/07 19:54:33 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/13 17:50:47 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := cc
-NAME := libftprintf.a
-CFLAGS := -Wall -Wextra -Werror
-SRCS := ft_printf.c \
-	ft_printf_arth_u.c \
-	ft_printf_arth.c \
-	ft_printf_char.c \
-	ft_printf_ptr.c \
-	ft_printf_str.c \
-	ft_printf_utils.c \
-	ft_printf_char_array.c \
-	ft_printf_nbr_array.c \
-	ft_printf_linked_list.c
+YELLOW=\033[1;33m
+RED=\033[1;31m
+GREEN=\033[1;32m
+BLUE=\033[0;34m
+NC=\033[0m
 
-YELLOW := \033[1;33m
-RED := \033[1;31m
-GREEN := \033[1;32m
-NC := \033[0m
-OBJS := $(SRCS:%.c=obj/%.o)
-BUILD_DIR = build
+CC 			= cc
+NAME 		= libftprintf.a
+CFLAGS 		= -Wall -Wextra -Werror
+
+SRCS 		= ft_printf.c \
+				ft_printf_arth_u.c \
+				ft_printf_arth.c \
+				ft_printf_char.c \
+				ft_printf_ptr.c \
+				ft_printf_str.c \
+				ft_printf_utils.c \
+				ft_printf_char_array.c \
+				ft_printf_nbr_array.c \
+				ft_printf_linked_list.c
+
+OBJS 		= $(SRCS:%.c=obj/%.o)
+BUILD_DIR	= build
 
 module: dir $(OBJS)
 
