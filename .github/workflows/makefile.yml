@@ -17,9 +17,6 @@ jobs:
     - name: Make program as module
       run: make module
 
-    - name: Re-make program
-      run: make re
-
     - name: View Contents of bin
       run: ls -la obj/
 
@@ -27,7 +24,7 @@ jobs:
       run: make clean
 
     - name: Make program as standalone
-      run: make
+      run: make all
 
     - name: Re-make program
       run: make re
