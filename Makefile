@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/13 18:42:11 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/15 14:10:25 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CC 			= cc
 NAME 		= libftprintf.a
 CFLAGS 		= -Wall -Wextra -Werror
 
-SRCS 		= ft_printf.c \
+SRCS 		= 	ft_printf.c \
 				ft_printf_arth_u.c \
 				ft_printf_arth.c \
 				ft_printf_char.c \
@@ -29,7 +29,8 @@ SRCS 		= ft_printf.c \
 				ft_printf_utils.c \
 				ft_printf_char_array.c \
 				ft_printf_nbr_array.c \
-				ft_printf_linked_list.c
+				ft_printf_linked_list.c \
+				ft_printf_arth_l.c
 
 OBJS 		= $(SRCS:%.c=obj/%.o)
 BUILD_DIR	= build
