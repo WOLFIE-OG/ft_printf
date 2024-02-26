@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/26 15:32:56 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/26 15:38:01 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ BUILD_DIR	= build
 
 all: $(NAME)
 
-$(NAME): dir $(OBJS) | $(BUILD_DIR)
+$(NAME): $(OBJS) | $(BUILD_DIR)
 	@echo "[$(GREEN)FTGNL$(NC)]     Building standalone lib..."
 	@ar -rcs $(NAME) $(OBJS)
 	@mv $(NAME) $(BUILD_DIR)/
@@ -48,7 +48,7 @@ $(BUILD_DIR):
 		mkdir -p $(BUILD_DIR); \
 	fi
 
-module: dir $(OBJS)
+module: $(OBJS)
 
 dir:
 	@if [ ! -d "obj" ]; then \
@@ -56,7 +56,7 @@ dir:
 		mkdir -p obj; \
 	fi
 
-obj/%.o: src/%.c include/*.h
+obj/%.o: src/%.c include/*.h | dir
 	@echo "[$(GREEN)FTPRINTF$(NC)]  Compiling $< --> $@"
 	@$(CC) -o $@ -c $< $(CFLAGS)
 
