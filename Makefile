@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/15 14:10:25 by otodd            ###   ########.fr        #
+#    Updated: 2024/02/26 15:32:56 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,19 @@ SRCS 		= 	ft_printf.c \
 OBJS 		= $(SRCS:%.c=obj/%.o)
 BUILD_DIR	= build
 
+all: $(NAME)
+
+$(NAME): dir $(OBJS) | $(BUILD_DIR)
+	@echo "[$(GREEN)FTGNL$(NC)]     Building standalone lib..."
+	@ar -rcs $(NAME) $(OBJS)
+	@mv $(NAME) $(BUILD_DIR)/
+
+$(BUILD_DIR):
+	@if [ ! -d "$(BUILD_DIR)" ]; then \
+		echo "[$(GREEN)FTGNL$(NC)]     Creating build directory..."; \
+		mkdir -p $(BUILD_DIR); \
+	fi
+
 module: dir $(OBJS)
 
 dir:
@@ -49,21 +62,12 @@ obj/%.o: src/%.c include/*.h
 
 clean:
 	@echo "[$(YELLOW)FTPRINTF$(NC)]  Cleaning object files..."
-	@rm -rf $(OBJS)
 	@rm -rf obj
 
 fclean: clean
 	@echo "[$(RED)FTPRINTF$(NC)]  Cleaning build files..."
 	@rm -rf $(BUILD_DIR)/
 
-all: dir $(OBJS)
-	@if [ ! -d "$(BUILD_DIR)" ]; then \
-		echo "[$(GREEN)FTGNL$(NC)]     Creating build directory..."; \
-		mkdir -p $(BUILD_DIR); \
-	fi
-	@echo "[$(GREEN)FTGNL$(NC)]     Building standalone lib..."
-	@ar -rcs $(NAME) $(OBJS)
-	@mv $(NAME) $(BUILD_DIR)/
 
 re: fclean all
 
