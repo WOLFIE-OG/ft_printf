@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/02/26 15:38:01 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/12 12:58:45 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ GREEN=\033[1;32m
 BLUE=\033[0;34m
 NC=\033[0m
 
-CC 			= cc
+CC 			= clang
 NAME 		= libftprintf.a
 CFLAGS 		= -Wall -Wextra -Werror
 
