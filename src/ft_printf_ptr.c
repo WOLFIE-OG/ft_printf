@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2024/01/18 16:50:09 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/13 15:48:56 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,24 @@ static char	ft_printf_convert_base(uintptr_t i)
 		return (i - 10 + c);
 }
 
-static int	ft_printf_out(char *string)
+static int	ft_printf_out(char *string, int fd)
 {
 	size_t	i;
 
 	i = 0;
-	i += ft_printf_str("0x");
-	i += ft_printf_str(string);
+	i += ft_printf_str("0x", fd);
+	i += ft_printf_str(string, fd);
 	free(string);
 	return (i);
 }
 
-size_t	ft_printf_ptr(uintptr_t n)
+size_t	ft_printf_ptr(uintptr_t n, int fd)
 {
 	int			len;
 	char		*string;
 
 	if (!n)
-		return (ft_printf_str("(nil)"));
+		return (ft_printf_str("(nil)", fd));
 	len = ft_printf_placements(n);
 	string = (char *)malloc(sizeof(char) * (len + 1));
 	string[len--] = '\0';
@@ -64,5 +64,5 @@ size_t	ft_printf_ptr(uintptr_t n)
 		string[len--] = (ft_printf_convert_base(n % 16));
 		n /= 16;
 	}
-	return (ft_printf_out(string));
+	return (ft_printf_out(string, fd));
 }

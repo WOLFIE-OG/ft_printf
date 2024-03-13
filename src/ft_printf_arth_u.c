@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:33:53 by wolfie            #+#    #+#             */
-/*   Updated: 2024/01/18 16:49:56 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/13 15:50:34 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_printf_placements(unsigned int n)
 	return (len);
 }
 
-size_t	ft_printf_arth_u(unsigned int n)
+size_t	ft_printf_arth_u(unsigned int n, int fd)
 {
 	int			len;
 	char		*string;
@@ -41,7 +41,7 @@ size_t	ft_printf_arth_u(unsigned int n)
 		string[len--] = (n % 10) + '0';
 		n /= 10;
 	}
-	i = ft_printf_str(string);
+	i = ft_printf_str(string, fd);
 	free(string);
 	return (i);
 }

@@ -6,14 +6,14 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 13:57:40 by otodd             #+#    #+#             */
-/*   Updated: 2024/01/18 16:50:06 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/13 15:46:54 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-size_t	ft_printf_char(char c)
+size_t	ft_printf_char(char c, int fd)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 	return (1);
 }

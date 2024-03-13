@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:29:06 by otodd             #+#    #+#             */
-/*   Updated: 2024/01/18 16:50:04 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/13 15:49:27 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,26 @@ static char	ft_printf_convert_base(unsigned int i, int is_upper)
 		return (i - 10 + c);
 }
 
-static int	ft_printf_out(char *string)
+static int	ft_printf_out(char *string, int fd)
 {
 	size_t	i;
 
 	i = 0;
-	i += ft_printf_str(string);
+	i += ft_printf_str(string, fd);
 	free(string);
 	return (i);
 }
 
-size_t	ft_printf_arth(unsigned int n, int base, int is_upper)
+size_t	ft_printf_arth(unsigned int n, int base, int is_upper, int fd)
 {
 	const int	is_negative = ft_printf_is_negative_num(n, base);
 	int			len;
 	char		*string;
 
 	if ((int)n == INT_MIN && base == 10)
-		return (ft_printf_str("-2147483648"));
+		return (ft_printf_str("-2147483648", fd));
 	if ((int)n == INT_MAX && base == 10)
-		return (ft_printf_str("2147483647"));
+		return (ft_printf_str("2147483647", fd));
 	n = ft_printf_get_abs(n, base);
 	len = ft_printf_placements(n, base) + is_negative;
 	string = (char *)malloc(sizeof(char) * (len + 1));
@@ -71,5 +71,5 @@ size_t	ft_printf_arth(unsigned int n, int base, int is_upper)
 		string[len--] = (ft_printf_convert_base(n % base, is_upper));
 		n /= base;
 	}
-	return (ft_printf_out(string));
+	return (ft_printf_out(string, fd));
 }
