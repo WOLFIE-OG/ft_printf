@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/13 14:30:09 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/19 11:52:42 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,13 +38,13 @@ BUILD_DIR	= build
 all: $(NAME)
 
 $(NAME): $(OBJS) | $(BUILD_DIR)
-	@echo "[$(GREEN)FTGNL$(NC)]     Building standalone lib..."
+	@echo "[$(GREEN)FTPRINTF$(NC)]     Building standalone lib..."
 	@ar -rcs $(NAME) $(OBJS)
 	@mv $(NAME) $(BUILD_DIR)/
 
 $(BUILD_DIR):
 	@if [ ! -d "$(BUILD_DIR)" ]; then \
-		echo "[$(GREEN)FTGNL$(NC)]     Creating build directory..."; \
+		echo "[$(GREEN)FTPRINTF$(NC)]     Creating build directory..."; \
 		mkdir -p $(BUILD_DIR); \
 	fi
 
