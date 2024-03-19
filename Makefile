@@ -6,14 +6,15 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/19 11:52:42 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/19 12:12:21 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 YELLOW=\033[1;33m
 RED=\033[1;31m
 GREEN=\033[1;32m
-BLUE=\033[0;34m
+BLUE=\033[1;34m
+CYAN=\033[1;36m
 NC=\033[0m
 
 CC 			= cc
@@ -38,7 +39,7 @@ BUILD_DIR	= build
 all: $(NAME)
 
 $(NAME): $(OBJS) | $(BUILD_DIR)
-	@echo "[$(GREEN)FTPRINTF$(NC)]     Building standalone lib..."
+	@echo "[$(BLUE)FTPRINTF$(NC)]     Building standalone lib..."
 	@ar -rcs $(NAME) $(OBJS)
 	@mv $(NAME) $(BUILD_DIR)/
 
@@ -57,7 +58,7 @@ dir:
 	fi
 
 obj/%.o: src/%.c include/*.h | dir
-	@echo "[$(GREEN)FTPRINTF$(NC)]  Compiling $< --> $@"
+	@echo "[$(CYAN)FTPRINTF$(NC)]  Compiling $< --> $@"
 	@$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
