@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/22 19:29:37 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/22 19:50:21 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ dir:
 		mkdir -p obj; \
 	fi
 
-obj/%.o: src/%.c include/*.h | dir
+obj/%.o: src/%.c include/ft_printf.h | dir
 	@echo "[$(CYAN)FTPRINTF$(NC)]  Compiling $< --> $@"
 	@$(CC) -o $@ -c $< $(CFLAGS)
 
