@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/19 12:21:38 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/22 19:29:37 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ NAME 		= libftprintf.a
 CFLAGS 		= -Wall -Wextra -Werror
 
 SRCS 		= 	ft_printf.c \
+				ft_printf_ingest.c \
 				ft_printf_arth_u.c \
 				ft_printf_arth.c \
 				ft_printf_char.c \
@@ -71,5 +72,11 @@ fclean: clean
 
 
 re: fclean all
+
+build_test:
+	@$(CC) test/test.c build/libftprintf.a
+
+run_test: build_test
+	@./a.out
 
 .PHONY: all clean fclean re

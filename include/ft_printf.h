@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:11:03 by wolfie            #+#    #+#             */
-/*   Updated: 2024/03/13 15:54:37 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/22 19:35:06 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,25 @@ typedef struct s_list
 
 # endif
 
-int			ft_printf(const char *in, ...);
-size_t		ft_printf_char(char c, int fd);
-size_t		ft_printf_str(char *s, int fd);
-size_t		ft_printf_arth(unsigned int n, int base, int is_upper, int fd);
-size_t		ft_printf_arth_l(long n, int base, int is_upper, int fd);
-size_t		ft_printf_arth_u(unsigned int n, int fd);
-size_t		ft_printf_ptr(uintptr_t n_ptr, int fd);
-size_t		ft_printf_char_array(char **a, int fd);
-size_t		ft_printf_nbr_array(int *a, char *type, int fd);
-size_t		ft_printf_linked_list(t_list *n, char *type, int fd);
-char		*ft_printf_strchr(char const *s, int c);
-int			ft_printf_get_abs(int n, int base);
-long		ft_printf_get_abs_l(long n, int base);
-int			ft_printf_is_negative_num(int n, int base);
-int			ft_printf_is_negative_num_l(long n, int base);
+int		ft_printf(const char *in, ...);
+int		ft_printf_fd(int fd, const char *in, ...);
+size_t	ft_printf_char(char c, int fd);
+size_t	ft_printf_str(char *s, int fd);
+size_t	ft_printf_arth(unsigned int n, int base, int is_upper, int fd);
+size_t	ft_printf_arth_l(long n, int base, int is_upper, int fd);
+size_t	ft_printf_arth_u(unsigned int n, int fd);
+size_t	ft_printf_ptr(uintptr_t n_ptr, int fd);
+size_t	ft_printf_char_array(char **a, int fd);
+size_t	ft_printf_nbr_array(int *a, char *type, int fd);
+size_t	ft_printf_linked_list(t_list *n, char *type, int fd);
+char	*ft_printf_strchr(char const *s, int c);
+int		ft_printf_get_abs(int n, int base);
+long	ft_printf_get_abs_l(long n, int base);
+int		ft_printf_is_negative_num(int n, int base);
+int		ft_printf_is_negative_num_l(long n, int base);
+size_t	ft_printf_parse_type(const char *in, va_list arg, int fd);
+size_t	ft_printf_parse_type_extra(const char *in, va_list arg, int fd);
+void	ft_printf_extra_flags(const char **in);
+void	ft_printf_process(const char **in, va_list args, size_t *count, int fd);
 
 #endif
