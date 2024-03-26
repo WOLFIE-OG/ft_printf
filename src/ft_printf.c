@@ -6,12 +6,11 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:06:27 by otodd             #+#    #+#             */
-/*   Updated: 2024/03/22 19:34:50 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/26 16:39:06 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
 
 int	ft_printf(const char *in, ...)
 {
@@ -36,7 +35,7 @@ int	ft_printf(const char *in, ...)
 	return (i);
 }
 
-int	ft_printf_fd(int fd, const char *in, ...)
+int	ft_fprintf(int fd, const char *in, ...)
 {
 	va_list	args;
 	size_t	i;

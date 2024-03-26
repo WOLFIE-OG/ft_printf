@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:11:03 by wolfie            #+#    #+#             */
-/*   Updated: 2024/03/22 19:35:06 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/26 16:38:31 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_list
 # endif
 
 int		ft_printf(const char *in, ...);
-int		ft_printf_fd(int fd, const char *in, ...);
+int		ft_fprintf(int fd, const char *in, ...);
 size_t	ft_printf_char(char c, int fd);
 size_t	ft_printf_str(char *s, int fd);
 size_t	ft_printf_arth(unsigned int n, int base, int is_upper, int fd);
