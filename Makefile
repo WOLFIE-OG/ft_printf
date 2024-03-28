@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/28 12:46:33 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/28 12:50:01 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,7 @@ fclean: clean
 re: fclean all
 
 build_test:
+	@rm -f a.out
 	@$(CC) test/test.c build/libftprintf.a
 
 run_test: build_test
