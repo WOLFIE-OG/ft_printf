@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:11:03 by wolfie            #+#    #+#             */
-/*   Updated: 2024/03/26 16:38:31 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/28 12:47:03 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	ft_printf_arth(unsigned int n, int base, int is_upper, int fd);
 size_t	ft_printf_arth_l(long n, int base, int is_upper, int fd);
 size_t	ft_printf_arth_u(unsigned int n, int fd);
 size_t	ft_printf_ptr(uintptr_t n_ptr, int fd);
-size_t	ft_printf_char_array(char **a, int fd);
+size_t	ft_printf_str_array(char **a, int fd);
 size_t	ft_printf_nbr_array(int *a, char *type, int fd);
 size_t	ft_printf_linked_list(t_list *n, char *type, int fd);
 char	*ft_printf_strchr(char const *s, int c);

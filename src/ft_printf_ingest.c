@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:29:06 by otodd             #+#    #+#             */
-/*   Updated: 2024/03/22 19:33:50 by otodd            ###   ########.fr       */
+/*   Updated: 2024/03/28 12:46:58 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_printf_parse_type(const char *in, va_list arg, int fd)
 	else if (*in == 's')
 		return (ft_printf_str(va_arg(arg, char *), fd));
 	else if (*in == 'a')
-		return (ft_printf_char_array(va_arg(arg, char **), fd));
+		return (ft_printf_str_array(va_arg(arg, char **), fd));
 	else if (*in == 'n')
 		return (ft_printf_nbr_array(va_arg(arg, int *), (char *)in, fd));
 	else if (*in == 'l' || *in == 'L')

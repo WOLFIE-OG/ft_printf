@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/22 19:50:21 by otodd            ###   ########.fr        #
+#    Updated: 2024/03/28 12:46:33 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS 		= 	ft_printf.c \
 				ft_printf_ptr.c \
 				ft_printf_str.c \
 				ft_printf_utils.c \
-				ft_printf_char_array.c \
+				ft_printf_str_array.c \
 				ft_printf_nbr_array.c \
 				ft_printf_linked_list.c \
 				ft_printf_arth_l.c
