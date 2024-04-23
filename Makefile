@@ -6,47 +6,48 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/03/28 12:50:01 by otodd            ###   ########.fr        #
+#    Updated: 2024/04/23 13:32:14 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-YELLOW=\033[1;33m
-RED=\033[1;31m
-GREEN=\033[1;32m
-BLUE=\033[1;34m
-CYAN=\033[1;36m
-NC=\033[0m
+YELLOW		=	\033[1;33m
+RED			=	\033[1;31m
+GREEN		=	\033[1;32m
+BLUE		=	\033[1;34m
+CYAN		=	\033[1;36m
+NC			=	\033[0m
 
-CC 			= cc
-NAME 		= libftprintf.a
-CFLAGS 		= -Wall -Wextra -Werror
+CC 			= 	cc
+NAME 		= 	libftprintf.a
+CFLAGS 		= 	-Wall -Wextra -Werror
 
-SRCS 		= 	ft_printf.c \
-				ft_printf_ingest.c \
-				ft_printf_arth_u.c \
-				ft_printf_arth.c \
-				ft_printf_char.c \
-				ft_printf_ptr.c \
-				ft_printf_str.c \
-				ft_printf_utils.c \
-				ft_printf_str_array.c \
-				ft_printf_nbr_array.c \
-				ft_printf_linked_list.c \
+SRCS 		=	ft_printf.c 			\
+				ft_printf_ingest.c 		\
+				ft_printf_arth_u.c 		\
+				ft_printf_arth.c 		\
+				ft_printf_char.c 		\
+				ft_printf_ptr.c 		\
+				ft_printf_str.c 		\
+				ft_printf_utils.c 		\
+				ft_printf_str_array.c	\
+				ft_printf_nbr_array.c 	\
+				ft_printf_linked_list.c	\
+				ft_printf_bool.c		\
 				ft_printf_arth_l.c
 
-OBJS 		= $(SRCS:%.c=obj/%.o)
-BUILD_DIR	= build
+OBJS 		= 	$(SRCS:%.c=obj/%.o)
+BUILD_DIR	=	build
 
 all: $(NAME)
 
 $(NAME): $(OBJS) | $(BUILD_DIR)
-	@echo "[$(BLUE)FTPRINTF$(NC)]     Building standalone lib..."
+	@echo "[$(BLUE)FTPRINTF$(NC)]  Building standalone lib..."
 	@ar -rcs $(NAME) $(OBJS)
 	@mv $(NAME) $(BUILD_DIR)/
 
 $(BUILD_DIR):
 	@if [ ! -d "$(BUILD_DIR)" ]; then \
-		echo "[$(GREEN)FTPRINTF$(NC)]     Creating build directory..."; \
+		echo "[$(GREEN)FTPRINTF$(NC)]  Creating build directory..."; \
 		mkdir -p $(BUILD_DIR); \
 	fi
 

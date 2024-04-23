@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:29:06 by otodd             #+#    #+#             */
-/*   Updated: 2024/03/28 12:46:58 by otodd            ###   ########.fr       */
+/*   Updated: 2024/04/23 13:33:32 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ size_t	ft_printf_parse_type_extra(const char *in, va_list arg, int fd)
 {
 	if (*in == 'q')
 		return (ft_printf_arth_l(va_arg(arg, long), 10, 0, fd));
+	else if (*in == 'b')
+		return (ft_printf_bool(va_arg(arg, int), fd));
 	else
 		return (0);
 }
@@ -57,7 +59,7 @@ void	ft_printf_extra_flags(const char **in)
 
 void	ft_printf_process(const char **in, va_list args, size_t *count, int fd)
 {
-	if (ft_printf_strchr("csanqlLpdiuxX%", **in))
+	if (ft_printf_strchr("csanqlLbpdiuxX%", **in))
 	{
 		*count += ft_printf_parse_type(*in, args, fd);
 		*count += ft_printf_parse_type_extra(*in, args, fd);
