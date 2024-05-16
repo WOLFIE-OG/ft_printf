@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:29:06 by otodd             #+#    #+#             */
-/*   Updated: 2024/04/23 13:33:32 by otodd            ###   ########.fr       */
+/*   Updated: 2024/05/16 15:55:42 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ size_t	ft_printf_parse_type(const char *in, va_list arg, int fd)
 		return (ft_printf_char(va_arg(arg, int), fd));
 	else if (*in == 's')
 		return (ft_printf_str(va_arg(arg, char *), fd));
-	else if (*in == 'a')
-		return (ft_printf_str_array(va_arg(arg, char **), fd));
-	else if (*in == 'n')
+	else if (*in == 'a' || *in == 'A')
+		return (ft_printf_str_array(va_arg(arg, char **), (char *)in, fd));
+	else if (*in == 'n' || *in == 'N')
 		return (ft_printf_nbr_array(va_arg(arg, int *), (char *)in, fd));
 	else if (*in == 'l' || *in == 'L')
 		return (ft_printf_linked_list(va_arg(arg, t_list *), (char *)in, fd));
@@ -52,14 +52,14 @@ size_t	ft_printf_parse_type_extra(const char *in, va_list arg, int fd)
 
 void	ft_printf_extra_flags(const char **in)
 {
-	if (ft_printf_strchr("Lln", **in))
+	if (ft_printf_strchr("LlnN", **in))
 		if (ft_printf_strchr("xXbo", *(*in + 1)))
 			(*in)++;
 }
 
 void	ft_printf_process(const char **in, va_list args, size_t *count, int fd)
 {
-	if (ft_printf_strchr("csanqlLbpdiuxX%", **in))
+	if (ft_printf_strchr("csaAnNqlLbpdiuxX%", **in))
 	{
 		*count += ft_printf_parse_type(*in, args, fd);
 		*count += ft_printf_parse_type_extra(*in, args, fd);

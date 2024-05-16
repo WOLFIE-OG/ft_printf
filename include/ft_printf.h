@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:11:03 by wolfie            #+#    #+#             */
-/*   Updated: 2024/04/23 13:30:11 by otodd            ###   ########.fr       */
+/*   Updated: 2024/05/16 15:55:54 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdbool.h>
-# define ARRAY_FORMATTER_S '['
+# define ARRAY_FORMATTER_S "["
 # define ARRAY_FORMATTER_M ", "
-# define ARRAY_FORMATTER_E ']'
+# define ARRAY_FORMATTER_E "]"
 # define ERR STDERR_FILENO
 # define IN STDIN_FILENO
 # define OUT STDOUT_FILENO
@@ -44,7 +44,7 @@ size_t	ft_printf_arth(unsigned int n, int base, int is_upper, int fd);
 size_t	ft_printf_arth_l(long n, int base, int is_upper, int fd);
 size_t	ft_printf_arth_u(unsigned int n, int fd);
 size_t	ft_printf_ptr(uintptr_t n_ptr, int fd);
-size_t	ft_printf_str_array(char **a, int fd);
+size_t	ft_printf_str_array(char **a, char *type, int fd);
 size_t	ft_printf_nbr_array(int *a, char *type, int fd);
 size_t	ft_printf_linked_list(t_list *n, char *type, int fd);
 size_t	ft_printf_bool(bool b, int fd);
