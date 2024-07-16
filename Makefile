@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:33:58 by otodd             #+#    #+#              #
-#    Updated: 2024/04/23 13:32:14 by otodd            ###   ########.fr        #
+#    Updated: 2024/07/16 15:57:47 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ BLUE		=	\033[1;34m
 CYAN		=	\033[1;36m
 NC			=	\033[0m
 
-CC 			= 	cc
+CC 			= 	gcc
 NAME 		= 	libftprintf.a
-CFLAGS 		= 	-Wall -Wextra -Werror
+CFLAGS 		= 	-Wall -Wextra -Werror -fPIC
 
 SRCS 		=	ft_printf.c 			\
 				ft_printf_ingest.c 		\
