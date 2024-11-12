@@ -4,7 +4,7 @@ This project is pretty straightforward, you have to recode printf. You will lear
 
 ## State
 
-[![ft_printf Build](https://img.shields.io/github/actions/workflow/status/WOLFIE-OG/ft_printf/makefile.yml?style=for-the-badge)](https://github.com/WOLFIE-OG/ft_printf/actions/workflows/makefile.yml) ![ft_printf Score](https://img.shields.io/badge/Score-100%2F125-brightgreen?style=for-the-badge)
+[![ft_printf Build](https://img.shields.io/github/actions/workflow/status/WOLFIE-OG/ft_printf/makefile.yml?style=for-the-badge)](https://github.com/WOLFIE-OG/ft_printf/actions/workflows/makefile.yml) ![ft_printf Score](https://img.shields.io/badge/Score-100%2F100-brightgreen?style=for-the-badge)
 
 ## Installation & Building
 
